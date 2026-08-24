@@ -2,7 +2,7 @@
    LINCONE FEDERAL CREDIT UNION - LOCALSTORAGE DATA MANAGER & DEFAULT STATE SEEDER
    ========================================================================== */
 
-const STORAGE_KEY = 'lincone_fcu_banking_system_v5';
+const STORAGE_KEY = 'lincone_fcu_banking_system_v6';
 
 const DEFAULT_STATE = {
   user: {
@@ -147,6 +147,19 @@ const DEFAULT_STATE = {
       time: '10:15:40',
       bond: 'UNHCR',
       purpose: 'UNHCR Monthly Disbursement'
+    },
+    {
+      ref: 'TXN-806007-B',
+      beneficiary: 'Geneva Reserve Escrow',
+      bank: 'UBS Geneva',
+      amount: 100000.00,
+      type: 'Wire Transfer',
+      method: 'Swift Wire',
+      status: 'Completed',
+      date: '2026-04-18',
+      time: '14:15:00',
+      bond: 'N/A',
+      purpose: 'Escrow Reserve Transfer'
     },
     {
       ref: 'TXN-806008',
