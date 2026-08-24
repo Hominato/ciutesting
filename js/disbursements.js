@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TUNEX - DISBURSEMENT MANAGER MODULE (TRANSFER VS CASHIER'S CHECK)
+   LINCONE FEDERAL CREDIT UNION - DISBURSEMENT MANAGER MODULE
    ========================================================================== */
 
 const DisbursementManager = {
@@ -97,12 +97,12 @@ const DisbursementManager = {
 
     let methodText = isCheck ? "Cashier's Check Delivery" : "Bank Transfer (Direct Wire)";
     let beneficiaryText = isCheck 
-      ? document.getElementById('disbursePayeeName').value || 'David McKenzie'
-      : 'David McKenzie (BancFirst)';
+      ? document.getElementById('disbursePayeeName').value || 'Monique Franco'
+      : 'Monique Franco (LincOne FCU)';
     
     let detailsText = isCheck
       ? `Courier: ${document.getElementById('disburseCourier').value}`
-      : 'Account ********5625 (BancFirst)';
+      : 'Account ********5625 (LincOne FCU)';
 
     // Show simulated modal
     UI.showModal('Processing Disbursement', `
@@ -142,13 +142,13 @@ const DisbursementManager = {
             const txnData = {
               ref: ref,
               beneficiary: beneficiaryText,
-              bank: isCheck ? 'Tunex Treasury Disburse' : 'BancFirst',
+              bank: isCheck ? 'LincOne Treasury Disburse' : 'LincOne FCU',
               accountNumber: '********5625',
               routingNumber: '********3632',
               amount: amount,
               type: 'Disbursement',
               method: methodText,
-              status: 'Completed',
+              status: 'Pending',
               date: new Date().toISOString().split('T')[0],
               time: new Date().toLocaleTimeString('en-US', { hour12: false }),
               purpose: `Disbursement (${methodText} - ${detailsText})`
@@ -156,15 +156,15 @@ const DisbursementManager = {
 
             StorageManager.addTransaction(txnData);
             StorageManager.addNotification(
-              'Disbursement Processed',
-              `${Helpers.formatCurrency(amount)} via ${methodText} (${ref}).`
+              'Disbursement Pending',
+              `${Helpers.formatCurrency(amount)} via ${methodText} (${ref}) - Status: Pending.`
             );
 
             // Update UI
             Dashboard.renderBalances();
             this.resetForm();
 
-            UI.showToast('Disbursement submitted successfully!', 'success');
+            UI.showToast('Disbursement submitted! Status: Pending', 'info');
             ReceiptManager.showReceiptModal(txnData);
           }, 500);
         }
@@ -181,7 +181,7 @@ const DisbursementManager = {
       'VAT / GST Information',
       `
       <div style="font-size: 0.88rem; line-height: 1.7; color: var(--text-secondary);">
-        <p style="margin-bottom: 14px;">Your <strong style="color:var(--text-primary)">VAT / GST registration</strong> is on file and verified. This information is used to accurately determine applicable tax obligations on disbursements processed through BNP Paribas Securities Corp.</p>
+        <p style="margin-bottom: 14px;">Your <strong style="color:var(--text-primary)">VAT / GST registration</strong> is on file and verified. This information is used to accurately determine applicable tax obligations on disbursements processed through LincOne Federal Credit Union.</p>
 
         <div style="background: rgba(16,185,129,0.07); border: 1px solid rgba(16,185,129,0.25); border-radius: 10px; padding: 14px 18px; margin-bottom: 16px;">
           <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-weight: 700; color: var(--text-primary); font-size: 0.92rem;">
@@ -196,7 +196,7 @@ const DisbursementManager = {
           </div>
         </div>
 
-        <p style="font-size: 0.80rem; color: var(--text-muted);">To update your VAT/GST registration details, please contact your Tunex relationship manager or visit the compliance portal.</p>
+        <p style="font-size: 0.80rem; color: var(--text-muted);">To update your VAT/GST registration details, please contact your LincOne relationship manager or visit the compliance portal.</p>
       </div>
       <div style="text-align: right; margin-top: 16px;">
         <button class="btn btn-primary btn-sm" onclick="UI.closeModal()">Close</button>

@@ -88,7 +88,7 @@ const TransactionsManager = {
     }));
 
     const dateStr = new Date().toISOString().split('T')[0];
-    Helpers.exportToCSV(`Tunex_Transaction_Ledger_${dateStr}.csv`, exportData);
+    Helpers.exportToCSV(`LincOne_FCU_Transaction_Ledger_${dateStr}.csv`, exportData);
     UI.showToast('Transaction ledger exported to CSV', 'success');
   }
 };

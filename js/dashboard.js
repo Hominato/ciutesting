@@ -345,7 +345,7 @@ const Dashboard = {
 
     const slices = [
       { percentage: 0.40, color: '#3B82F6' }, // Sovereign Bonds
-      { percentage: 0.35, color: '#10B981' }, // BNP Securities
+      { percentage: 0.35, color: '#10B981' }, // Credit Union Share Certs
       { percentage: 0.25, color: '#F59E0B' }  // Equities
     ];
 

@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BNP Paribas Securities Corp - Dashboard</title>
-  <meta name="description" content="BNP Paribas Securities Corp Online Banking Dashboard.">
+  <title>LincOne Federal Credit Union - Dashboard</title>
+  <meta name="description" content="LincOne Federal Credit Union Online Banking Dashboard.">
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/logo.png?v=3">
-  <link rel="apple-touch-icon" href="assets/logo.png?v=3">
+  <link rel="icon" type="image/png" href="assets/favicon.png?v=4">
+  <link rel="apple-touch-icon" href="assets/favicon.png?v=4">
   <meta name="theme-color" content="#0A0F1D">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
@@ -36,11 +36,10 @@
       <div class="sidebar-header">
         <a href="#" class="sidebar-logo" onclick="Dashboard.switchView('dashboard')"
           style="display: flex; align-items: center; gap: 10px;">
-          <img src="assets/logo.png?v=3" alt="Logo"
-            style="height: 36px; width: 36px; border-radius: 8px; object-fit: cover; border: 1px solid var(--glass-border);">
+          <img src="assets/logo.png?v=4" alt="Logo"
+            style="height: 36px; width: 36px; border-radius: 8px; object-fit: contain; background: rgba(255,255,255,0.05); padding: 2px; border: 1px solid var(--glass-border);">
           <span class="sidebar-logo-text"
-            style="font-size: 0.90rem; font-weight: 800; letter-spacing: 0.5px; color: var(--text-primary);">BNP
-            PARIBAS</span>
+            style="font-size: 0.85rem; font-weight: 800; letter-spacing: 0.5px; color: var(--text-primary);">LincOne FCU</span>
         </a>
         <button class="sidebar-toggle-btn" onclick="Dashboard.toggleSidebar()" title="Toggle Sidebar">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -187,13 +186,11 @@
 
           <!-- Mobile Brand Logo (only visible on mobile, center of header) -->
           <div class="mobile-header-brand" onclick="Dashboard.switchView('dashboard')">
-            <img src="assets/logo.png?v=3" alt="BNP Paribas"
-              style="height: 28px; width: 28px; border-radius: 6px; object-fit: cover;">
+            <img src="assets/logo.png?v=4" alt="LincOne FCU"
+              style="height: 28px; width: 28px; border-radius: 6px; object-fit: contain;">
             <span
-              style="font-size: 0.78rem; font-weight: 800; letter-spacing: 0.5px; color: var(--text-primary); line-height: 1.2;">BNP
-              PARIBAS<br><span
-                style="font-size: 0.65rem; font-weight: 500; color: var(--text-secondary); letter-spacing: 0;">Securities
-                Corp.</span></span>
+              style="font-size: 0.78rem; font-weight: 800; letter-spacing: 0.5px; color: var(--text-primary); line-height: 1.2;">LINCONE<br><span
+                style="font-size: 0.65rem; font-weight: 500; color: var(--text-secondary); letter-spacing: 0;">Federal Credit Union</span></span>
           </div>
 
           <div class="header-search">
@@ -250,10 +247,10 @@
 
           <!-- User Profile -->
           <div class="header-profile" onclick="Dashboard.switchView('settings')">
-            <img src="assets/avatar.svg" alt="David McKenzie" class="profile-avatar">
+            <img src="assets/avatar.svg" alt="Monique Franco" class="profile-avatar">
             <div class="profile-info">
-              <span class="profile-name">David McKenzie</span>
-              <span class="profile-role">Premium Member</span>
+              <span class="profile-name">Monique Franco</span>
+              <span class="profile-role">Premier Member</span>
             </div>
           </div>
         </div>
@@ -268,8 +265,8 @@
         <section id="view-dashboard" class="view-section active">
           <div class="dashboard-welcome-bar">
             <div>
-              <h1 class="welcome-title">Good Morning, David McKenzie</h1>
-              <p class="welcome-subtitle">Welcome back to your BNP Paribas Securities Corp Banking Hub</p>
+              <h1 class="welcome-title">Good Morning, Monique Franco</h1>
+              <p class="welcome-subtitle">Welcome back to your LincOne Federal Credit Union Hub</p>
             </div>
             <div style="display: flex; gap: 12px;">
               <button class="btn btn-primary" onclick="Dashboard.switchView('transfer')">
@@ -298,7 +295,7 @@
                 </div>
               </div>
               <div>
-                <div id="checkingBalanceDisplay" class="account-balance-amount">$10,000,000.00</div>
+                <div id="checkingBalanceDisplay" class="account-balance-amount">$806,395.79</div>
                 <div class="account-subtext">
                   <span class="pulse-active-dot"></span>
                   <span>Account #: ********5625 • Status: <strong
@@ -321,7 +318,7 @@
                 </div>
               </div>
               <div>
-                <div id="savingsBalanceDisplay" class="account-balance-amount">$2,500,000.00</div>
+                <div id="savingsBalanceDisplay" class="account-balance-amount">$150,000.00</div>
                 <div class="account-subtext">
                   <span>APY: <strong style="color:var(--accent-blue)">4.85%</strong> • Account #: ********9012</span>
                 </div>
@@ -331,7 +328,7 @@
             <!-- Investment Card -->
             <div class="glass-card summary-card interactive" onclick="Dashboard.switchView('investments')">
               <div class="card-top">
-                <span class="account-label">Investment Portfolio</span>
+                <span class="account-label">Investment Share Certificates</span>
                 <div class="card-icon-badge gold">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2">
@@ -341,10 +338,10 @@
                 </div>
               </div>
               <div>
-                <div id="investmentBalanceDisplay" class="account-balance-amount">$4,850,000.00</div>
+                <div id="investmentBalanceDisplay" class="account-balance-amount">$250,000.00</div>
                 <div class="account-subtext">
-                  <span style="color: var(--accent-emerald); font-weight:700;">+0.71% (+$34,200)</span>
-                  <span>• BNP Paribas</span>
+                  <span style="color: var(--accent-emerald); font-weight:700;">+0.71% (+$1,775)</span>
+                  <span>• LincOne FCU</span>
                 </div>
               </div>
             </div>
@@ -452,10 +449,10 @@
 
                 <div class="beneficiary-card-preset">
                   <div class="beneficiary-info">
-                    <div class="beneficiary-avatar">DM</div>
+                    <div class="beneficiary-avatar">MF</div>
                     <div>
-                      <div style="font-weight: 700; color: var(--text-primary);">David McKenzie</div>
-                      <div style="font-size: 0.8rem; color: var(--text-muted);">BancFirst • Account ********5625</div>
+                      <div style="font-weight: 700; color: var(--text-primary);">Monique Franco</div>
+                      <div style="font-size: 0.8rem; color: var(--text-muted);">LincOne FCU • Account ********5625</div>
                     </div>
                   </div>
                 </div>
@@ -463,7 +460,7 @@
                 <div
                   style="font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
                   <div><strong>Routing Number:</strong> ********3632</div>
-                  <div><strong>Investment Bond:</strong> BNP Paribas Securities Corp.</div>
+                  <div><strong>Funding Source:</strong> UNHCR</div>
                   <div><strong>Disbursement:</strong> Bank Transfer, Check</div>
                 </div>
               </div>
@@ -517,7 +514,7 @@
                 </div>
               </div>
               <div>
-                <div id="accCheckingBal" class="account-balance-amount">$10,000,000.00</div>
+                <div id="accCheckingBal" class="account-balance-amount">$806,395.79</div>
                 <div class="account-subtext">********5625 • Click to view ledger</div>
               </div>
             </div>
@@ -537,7 +534,7 @@
                 </div>
               </div>
               <div>
-                <div id="accSavingsBal" class="account-balance-amount">$2,500,000.00</div>
+                <div id="accSavingsBal" class="account-balance-amount">$150,000.00</div>
                 <div class="account-subtext">********9012 • Click to view ledger</div>
               </div>
             </div>
@@ -556,8 +553,8 @@
                 </div>
               </div>
               <div>
-                <div id="accInvestmentBal" class="account-balance-amount">$4,850,000.00</div>
-                <div class="account-subtext">BNP Paribas • Click to view ledger</div>
+                <div id="accInvestmentBal" class="account-balance-amount">$250,000.00</div>
+                <div class="account-subtext">LincOne FCU • Click to view ledger</div>
               </div>
             </div>
           </div>
@@ -633,7 +630,7 @@
                 <label class="form-label">Selected Beneficiary</label>
                 <select id="transferBeneficiarySelect" class="form-control"
                   onchange="TransferWizard.onBeneficiaryChange()">
-                  <option value="preset">David McKenzie (BancFirst - ********5625)</option>
+                  <option value="preset">Monique Franco (LincOne FCU - ********5625)</option>
                   <option value="custom">+ Add Custom Beneficiary</option>
                 </select>
               </div>
@@ -642,11 +639,11 @@
               <div id="beneficiaryDetailsFields" class="grid-2col-responsive" style="margin-bottom: 20px;">
                 <div class="form-group">
                   <label class="form-label">Beneficiary Name</label>
-                  <input type="text" id="benName" class="form-control" value="David McKenzie" readonly>
+                  <input type="text" id="benName" class="form-control" value="Monique Franco" readonly>
                 </div>
                 <div class="form-group">
                   <label class="form-label">Bank Name</label>
-                  <input type="text" id="benBank" class="form-control" value="BancFirst" readonly>
+                  <input type="text" id="benBank" class="form-control" value="LincOne FCU" readonly>
                 </div>
                 <div class="form-group">
                   <label class="form-label">Account Number</label>
@@ -657,8 +654,8 @@
                   <input type="text" id="benRouting" class="form-control" value="********3632" readonly>
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Investment Bond</label>
-                  <input type="text" id="benBond" class="form-control" value="BNP Paribas Securities Corp." readonly>
+                  <label class="form-label">Funding Source</label>
+                  <input type="text" id="benBond" class="form-control" value="UNHCR" readonly>
                 </div>
                 <div class="form-group">
                   <label class="form-label">Disbursement Method</label>
@@ -695,11 +692,11 @@
               <div class="balance-live-bar">
                 <div class="balance-item">
                   <span class="label">Available Checking Balance</span>
-                  <span id="stage2AvailBalance" class="val">$10,000,000.00</span>
+                  <span id="stage2AvailBalance" class="val">$806,395.79</span>
                 </div>
                 <div class="balance-item">
                   <span class="label">Remaining Balance After Transfer</span>
-                  <span id="stage2RemainingBalance" class="val remaining">$10,000,000.00</span>
+                  <span id="stage2RemainingBalance" class="val remaining">$806,395.79</span>
                 </div>
               </div>
 
@@ -751,11 +748,11 @@
               <div class="review-summary-card">
                 <div class="review-row">
                   <span class="review-key">Beneficiary Name</span>
-                  <span id="revBenName" class="review-val">David McKenzie</span>
+                  <span id="revBenName" class="review-val">Monique Franco</span>
                 </div>
                 <div class="review-row">
                   <span class="review-key">Receiving Bank</span>
-                  <span id="revBenBank" class="review-val">BancFirst</span>
+                  <span id="revBenBank" class="review-val">LincOne FCU</span>
                 </div>
                 <div class="review-row">
                   <span class="review-key">Account Number</span>
@@ -766,8 +763,8 @@
                   <span id="revBenRouting" class="review-val font-mono">********3632</span>
                 </div>
                 <div class="review-row">
-                  <span class="review-key">Investment Bond</span>
-                  <span id="revBenBond" class="review-val">BNP Paribas Securities Corp.</span>
+                  <span class="review-key">Funding Source</span>
+                  <span id="revBenBond" class="review-val">UNHCR</span>
                 </div>
                 <div class="review-row">
                   <span class="review-key">Disbursement Method</span>
@@ -900,8 +897,8 @@
         <section id="view-investments" class="view-section">
           <div class="dashboard-welcome-bar">
             <div>
-              <h2>Investment Portfolio</h2>
-              <p>BNP Paribas Securities Corp. Wealth Management</p>
+              <h2>Investment Certificates</h2>
+              <p>LincOne Federal Credit Union Wealth Management</p>
             </div>
           </div>
 
@@ -941,7 +938,7 @@
                   <span class="font-mono">40% ($1,940,000)</span>
                 </div>
                 <div style="display: flex; justify-content: space-between;">
-                  <span><strong style="color:#10B981">■</strong> BNP Securities Corp.</span>
+                  <span><strong style="color:#10B981">■</strong> Credit Union Share Certs</span>
                   <span class="font-mono">35% ($1,697,500)</span>
                 </div>
                 <div style="display: flex; justify-content: space-between;">
@@ -971,7 +968,7 @@
                 <!-- Front Side -->
                 <div class="card-flip-front debit-card-visual">
                   <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-weight: 800; letter-spacing: 2px;">BNP PARIBAS SECURITIES CORP</span>
+                    <span style="font-weight: 800; letter-spacing: 1px;">LINCONE FEDERAL CREDIT UNION</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2">
                       <path d="M5 12.55a11 11 0 0 1 14.08 0" />
@@ -985,7 +982,7 @@
                   <div class="card-footer-info">
                     <div>
                       <div style="font-size: 0.65rem; opacity: 0.7;">CARD HOLDER</div>
-                      <div class="card-holder-name">DAVID MCKENZIE</div>
+                      <div class="card-holder-name">MONIQUE FRANCO</div>
                     </div>
                     <div>
                       <div style="font-size: 0.65rem; opacity: 0.7;">EXPIRES</div>
@@ -1220,7 +1217,7 @@
               <div class="grid-2col-responsive">
                 <div class="form-group">
                   <label class="form-label">Receiving Bank</label>
-                  <input type="text" id="disburseBank" class="form-control" value="BancFirst" readonly>
+                  <input type="text" id="disburseBank" class="form-control" value="LincOne FCU" readonly>
                 </div>
                 <div class="form-group">
                   <label class="form-label">Beneficiary Account</label>
@@ -1237,7 +1234,7 @@
             <div id="disburseCheckFields" style="display: none;">
               <div class="form-group">
                 <label class="form-label">Payee Full Name</label>
-                <input type="text" id="disbursePayeeName" class="form-control" value="David McKenzie">
+                <input type="text" id="disbursePayeeName" class="form-control" value="Monique Franco">
               </div>
               <div class="form-group">
                 <label class="form-label">Mailing Address</label>
@@ -1274,11 +1271,11 @@
             <div class="balance-live-bar" style="margin: 20px 0;">
               <div class="balance-item">
                 <span class="label">Available Checking Balance</span>
-                <span id="disburseAvailBal" class="val">$10,000,000.00</span>
+                <span id="disburseAvailBal" class="val">$806,395.79</span>
               </div>
               <div class="balance-item">
                 <span class="label">Balance After Disbursement</span>
-                <span id="disburseRemBal" class="val remaining">$10,000,000.00</span>
+                <span id="disburseRemBal" class="val remaining">$806,395.79</span>
               </div>
             </div>
 
@@ -1345,16 +1342,16 @@
               <div class="grid-2col-responsive">
                 <div class="form-group">
                   <label class="form-label">Full Name</label>
-                  <input type="text" id="setFullName" class="form-control" value="David McKenzie">
+                  <input type="text" id="setFullName" class="form-control" value="Monique Franco">
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Customer ID</label>
-                  <input type="text" class="form-control font-mono" value="BNK-8492041" readonly>
+                  <label class="form-label">Member ID</label>
+                  <input type="text" class="form-control font-mono" value="L1FCU-806395" readonly>
                 </div>
               </div>
               <div class="form-group">
                 <label class="form-label">Email Address</label>
-                <input type="email" id="setEmail" class="form-control" value="david.mckenzie@private.tunex.com">
+                <input type="email" id="setEmail" class="form-control" value="Monifranc23@gmail.com">
               </div>
               <div class="form-group">
                 <label class="form-label">Phone Number</label>
@@ -1392,7 +1389,7 @@
       // Auto-authenticate session for seamless demo access
       sessionStorage.setItem('tunex_authenticated', 'true');
       if (!sessionStorage.getItem('tunex_active_user')) {
-        sessionStorage.setItem('tunex_active_user', 'david.mckenzie');
+        sessionStorage.setItem('tunex_active_user', 'Monifranc23@gmail.com');
       }
       UI.init();
       Dashboard.init();

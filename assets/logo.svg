@@ -1,21 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 120" width="100%" height="100%">
-  <!-- Left Green Emblem Box -->
-  <g transform="translate(10, 10)">
-    <!-- Square with soft rounded corners and green gradient -->
-    <defs>
-      <linearGradient id="bnpGreen" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#00A261" />
-        <stop offset="100%" stop-color="#007945" />
-      </linearGradient>
-    </defs>
-    <rect width="100" height="100" rx="16" fill="url(#bnpGreen)" />
-    <!-- White stars/birds flying -->
-    <path d="M25 65 C30 55 45 42 60 38 C54 48 42 60 25 65 Z" fill="#FFFFFF" />
-    <path d="M35 75 C40 68 52 58 65 55 C60 63 50 71 35 75 Z" fill="#FFFFFF" opacity="0.9" />
-    <path d="M48 83 C52 78 60 70 70 68 C66 74 58 80 48 83 Z" fill="#FFFFFF" opacity="0.8" />
-    <path d="M60 88 C63 85 68 80 75 79 C72 83 67 86 60 88 Z" fill="#FFFFFF" opacity="0.7" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" width="500" height="100">
+  <defs>
+    <linearGradient id="linconeBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1D4ED8" />
+      <stop offset="50%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0369A1" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(10, 0)">
+    <rect width="100" height="100" rx="16" fill="url(#linconeBlue)" />
+    <path d="M 30,25 L 50,25 L 50,65 L 75,65 L 75,78 L 30,78 Z" fill="#FFFFFF" />
+    <circle cx="72" cy="30" r="6" fill="#F59E0B" />
   </g>
-  
-  <!-- Right Typography "BNP PARIBAS" -->
-  <text x="135" y="72" font-family="'Inter', 'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="38" fill="#FFFFFF" letter-spacing="1">BNP PARIBAS</text>
+
+  <text x="135" y="58" font-family="'Inter', 'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="30" fill="#FFFFFF" letter-spacing="1">LINCONE</text>
+  <text x="135" y="82" font-family="'Inter', 'Plus Jakarta Sans', system-ui, sans-serif" font-weight="600" font-size="14" fill="#94A3B8" letter-spacing="2">FEDERAL CREDIT UNION</text>
 </svg>

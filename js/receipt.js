@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TUNEX - RECEIPT GENERATOR & STATEMENT BUILDER
+   LINCONE FEDERAL CREDIT UNION - RECEIPT GENERATOR & STATEMENT BUILDER
    ========================================================================== */
 
 const ReceiptManager = {
@@ -25,9 +25,9 @@ const ReceiptManager = {
       <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid var(--card-border); border-radius: var(--radius-lg); padding: 24px; font-family: var(--font-main);">
         <!-- Receipt Header -->
         <div style="text-align: center; padding-bottom: 20px; border-bottom: 1px solid var(--card-border); margin-bottom: 20px;">
-          <img src="assets/logo.png" alt="BNP Paribas Securities Corp Logo" style="height: 40px; margin-bottom: 8px; border-radius: 6px;">
+          <img src="assets/logo.png" alt="LincOne Federal Credit Union Logo" style="height: 50px; margin-bottom: 8px; border-radius: 6px; object-fit: contain;">
           <h3 style="margin-bottom: 4px;">Official Transaction Receipt</h3>
-          <span class="badge badge-success">Dispatched & Verified</span>
+          <span class="badge ${txn.status === 'Completed' ? 'badge-success' : 'badge-warning'}">${txn.status === 'Completed' ? 'Dispatched & Verified' : 'Pending Authorization'}</span>
         </div>
 
         <!-- Details Grid -->
@@ -57,8 +57,8 @@ const ReceiptManager = {
             <span class="font-mono">${Helpers.maskAccount(txn.routingNumber || '********3632')}</span>
           </div>
           <div style="display: flex; justify-content: space-between;">
-            <span style="color: var(--text-muted);">Investment Bond:</span>
-            <span>${txn.bond || 'BNP Paribas Securities Corp.'}</span>
+            <span style="color: var(--text-muted);">Originating Source / Institution:</span>
+            <span>${txn.bond || 'UNHCR'}</span>
           </div>
           <div style="display: flex; justify-content: space-between;">
             <span style="color: var(--text-muted);">Disbursement Method:</span>
@@ -69,13 +69,13 @@ const ReceiptManager = {
             <span>${txn.purpose || 'Money Transfer'}</span>
           </div>
           <div style="display: flex; justify-content: space-between; padding-top: 12px; border-top: 1px dashed var(--card-border);">
-            <span style="font-weight: 700; font-size: 1rem;">Amount Transferred:</span>
+            <span style="font-weight: 700; font-size: 1rem;">Amount Processed:</span>
             <span class="font-mono" style="font-size: 1.3rem; font-weight: 800; color: var(--accent-emerald);">${Helpers.formatCurrency(txn.amount)}</span>
           </div>
         </div>
 
         <div style="text-align: center; font-size: 0.72rem; color: var(--text-muted); margin-bottom: 20px;">
-          Fictional Banking Demonstration • BNP Paribas Securities Corp N.A.
+          LincOne Federal Credit Union • NCUA Insured
         </div>
 
         <div style="display: flex; gap: 10px; justify-content: flex-end;">
@@ -102,7 +102,7 @@ const ReceiptManager = {
     body { font-family: 'Helvetica Neue', Arial, sans-serif; padding: 40px; max-width: 600px; margin: 0 auto; color: #1e293b; background: #f8fafc; }
     .card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 32px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
     .header { text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 20px; margin-bottom: 24px; }
-    .logo { font-size: 24px; font-weight: 800; color: #1d4ed8; letter-spacing: 2px; }
+    .logo { font-size: 22px; font-weight: 800; color: #1d4ed8; letter-spacing: 1px; }
     .row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 14px; }
     .val { font-weight: 600; }
     .amount-box { text-align: center; margin-top: 24px; padding: 20px; background: #f0fdf4; border-radius: 12px; border: 1px solid #bbf7d0; }
@@ -113,16 +113,16 @@ const ReceiptManager = {
 <body>
   <div class="card">
     <div class="header">
-      <div class="logo">BNP PARIBAS SECURITIES CORP</div>
+      <div class="logo">LINCONE FEDERAL CREDIT UNION</div>
       <p style="margin-top: 4px; color: #64748b;">OFFICIAL TRANSACTION RECEIPT</p>
     </div>
     <div class="row"><span>Reference Number:</span><span class="val">${txn.ref}</span></div>
     <div class="row"><span>Date & Time:</span><span class="val">${txn.date} ${txn.time}</span></div>
     <div class="row"><span>Beneficiary:</span><span class="val">${txn.beneficiary}</span></div>
-    <div class="row"><span>Bank:</span><span class="val">${txn.bank}</span></div>
+    <div class="row"><span>Bank / Institution:</span><span class="val">${txn.bank}</span></div>
     <div class="row"><span>Account Number:</span><span class="val">${Helpers.maskAccount(txn.accountNumber || '********5625')}</span></div>
     <div class="row"><span>Routing Number:</span><span class="val">${Helpers.maskAccount(txn.routingNumber || '********3632')}</span></div>
-    <div class="row"><span>Investment Bond:</span><span class="val">${txn.bond || 'BNP Paribas Securities Corp.'}</span></div>
+    <div class="row"><span>Originating Source:</span><span class="val">${txn.bond || 'UNHCR'}</span></div>
     <div class="row"><span>Disbursement Method:</span><span class="val">${txn.method}</span></div>
     <div class="row"><span>Purpose:</span><span class="val">${txn.purpose || 'Transfer'}</span></div>
     
@@ -132,8 +132,8 @@ const ReceiptManager = {
     </div>
 
     <div class="footer">
-      This is an electronically generated receipt for a fictional demonstration banking platform.<br>
-      BNP Paribas Securities Corp N.A. • All Rights Reserved.
+      This is an official transaction receipt issued by LincOne Federal Credit Union.<br>
+      LincOne Federal Credit Union • Federally Insured by NCUA.
     </div>
   </div>
 </body>
@@ -200,13 +200,13 @@ const ReceiptManager = {
       <div style="padding: 10px;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--card-border); padding-bottom: 20px; margin-bottom: 24px;">
           <div>
-            <img src="assets/logo.png" alt="BNP Paribas Securities Corp Logo" style="height: 44px; margin-bottom: 8px; border-radius: 6px;">
+            <img src="assets/logo.png" alt="LincOne Federal Credit Union Logo" style="height: 50px; margin-bottom: 8px; border-radius: 6px; object-fit: contain;">
             <h3>Monthly Account Statement</h3>
             <p style="font-size: 0.85rem; color: var(--text-muted);">Period: ${month}</p>
           </div>
           <div style="text-align: right; font-size: 0.85rem; color: var(--text-secondary);">
             <strong style="color: var(--text-primary); font-size: 1rem;">${user.name}</strong><br>
-            Customer ID: ${user.id}<br>
+            Member ID: ${user.id}<br>
             Account Type: ${user.accountType}<br>
             Account Number: ********5625
           </div>

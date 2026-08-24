@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TUNEX - THREE-STAGE TRANSFER WIZARD MODULE
+   LINCONE FEDERAL CREDIT UNION - THREE-STAGE TRANSFER WIZARD MODULE
    ========================================================================== */
 
 const TransferWizard = {
@@ -56,10 +56,9 @@ const TransferWizard = {
 
   onBeneficiaryChange() {
     const sel = document.getElementById('transferBeneficiarySelect').value;
-    const fields = document.getElementById('beneficiaryDetailsFields');
     
     if (sel === 'custom') {
-      UI.showToast('Preloaded demo beneficiary David McKenzie selected for best experience.', 'info');
+      UI.showToast('Preloaded demo beneficiary Monique Franco selected for best experience.', 'info');
     }
   },
 
@@ -76,10 +75,10 @@ const TransferWizard = {
     logBox.innerHTML = '';
 
     const logs = [
-      'Connecting to secure banking network...',
-      'Querying BancFirst Routing Node (********3632)...',
+      'Connecting to LincOne FCU secure clearing network...',
+      'Querying Receiving Routing Node (********3632)...',
       'Verifying beneficiary account ********5625...',
-      'Checking investment bond link (BNP Paribas Securities Corp.)...',
+      'Checking funding source link (UNHCR)...',
       'SUCCESS: Beneficiary Account Verified & Active'
     ];
 
@@ -174,7 +173,7 @@ const TransferWizard = {
       purpose,
       amount,
       type: 'Transfer',
-      status: 'Processing',
+      status: 'Pending',
       date: new Date().toISOString().split('T')[0],
       time: new Date().toLocaleTimeString('en-US', { hour12: false })
     };
@@ -202,7 +201,7 @@ const TransferWizard = {
     // Show Processing Modal
     const modalContent = `
       <div class="processing-modal-content">
-        <h4 style="margin-bottom: 12px;">Dispatched to Tunex Banking Network</h4>
+        <h4 style="margin-bottom: 12px;">Dispatched to LincOne FCU Network</h4>
         <p style="font-size: 0.85rem; color: var(--text-secondary);">Please do not refresh. Encrypted transfer in progress...</p>
         
         <div class="progress-bar-track">
@@ -221,9 +220,9 @@ const TransferWizard = {
     const steps = [
       { pct: 20, text: 'Initializing transfer sequence...' },
       { pct: 40, text: 'Encrypting transaction payload (AES-256)...' },
-      { pct: 60, text: 'Connecting to secure banking network...' },
-      { pct: 80, text: 'Sending payment to BancFirst node...' },
-      { pct: 100, text: 'Awaiting network confirmation...' }
+      { pct: 60, text: 'Connecting to LincOne FCU network...' },
+      { pct: 80, text: 'Sending payment to beneficiary account...' },
+      { pct: 100, text: 'Awaiting ledger authorization...' }
     ];
 
     steps.forEach((step, index) => {
@@ -243,6 +242,7 @@ const TransferWizard = {
 
   completeTransferSuccess() {
     const txn = this.currentTxnData;
+    txn.status = 'Pending';
     const accounts = StorageManager.getAccounts();
     const newBalance = accounts.checking.balance - txn.amount;
 
@@ -250,8 +250,8 @@ const TransferWizard = {
     StorageManager.updateCheckingBalance(newBalance);
     StorageManager.addTransaction(txn);
     StorageManager.addNotification(
-      'Transfer Submitted',
-      `${Helpers.formatCurrency(txn.amount)} sent to ${txn.beneficiary} (${txn.ref}).`
+      'Transfer Pending',
+      `${Helpers.formatCurrency(txn.amount)} sent to ${txn.beneficiary} (${txn.ref}) - Status: Pending.`
     );
 
     // Save for receipt generator module
@@ -268,7 +268,7 @@ const TransferWizard = {
     const refBadge = document.getElementById('successRefBadge');
     if (refBadge) refBadge.textContent = txn.ref;
 
-    UI.showToast('Transfer completed and saved to LocalStorage!', 'success');
+    UI.showToast('Transfer submitted! Status: Pending', 'info');
   },
 
   // ------------------------------------------------------------------------

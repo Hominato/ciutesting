@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TUNEX / BNP PARIBAS - ACCOUNTS MANAGER MODULE (DETAILS & INTERNAL TRANSFERS)
+   LINCONE FEDERAL CREDIT UNION - ACCOUNTS MANAGER MODULE
    ========================================================================== */
 
 const AccountsManager = {
@@ -79,7 +79,7 @@ const AccountsManager = {
           </div>
           <div style="display: flex; justify-content: space-between; padding-bottom: 8px;">
             <span style="color: var(--text-secondary);">Monthly Maintenance Fee:</span>
-            <strong style="color: var(--accent-emerald); font-weight: 700;">$0.00 (Waived for Premium Members)</strong>
+            <strong style="color: var(--accent-emerald); font-weight: 700;">$0.00 (Waived for Premier Members)</strong>
           </div>
         </div>
       `;
@@ -114,7 +114,7 @@ const AccountsManager = {
         </div>
       `;
     } else if (type === 'investment') {
-      if (titleEl) titleEl.textContent = 'Investment Portfolio Details';
+      if (titleEl) titleEl.textContent = 'Investment Certificate Details';
       contentEl.innerHTML = `
         <div style="display: flex; flex-direction: column; gap: 16px;">
           <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--card-border); padding-bottom: 8px;">
@@ -122,7 +122,7 @@ const AccountsManager = {
             <strong>${accounts.investment.name}</strong>
           </div>
           <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--card-border); padding-bottom: 8px;">
-            <span style="color: var(--text-secondary);">Custody &amp; Securities Clearing:</span>
+            <span style="color: var(--text-secondary);">Institution &amp; Custody:</span>
             <strong>${accounts.investment.firm}</strong>
           </div>
           <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--card-border); padding-bottom: 8px;">
@@ -135,7 +135,7 @@ const AccountsManager = {
           </div>
           <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--card-border); padding-bottom: 8px;">
             <span style="color: var(--text-secondary);">Asset Classes:</span>
-            <strong>Bonds (40%) / Equities (35%) / Cash (25%)</strong>
+            <strong>Bonds (40%) / Share Certs (35%) / Cash (25%)</strong>
           </div>
           <div style="display: flex; justify-content: space-between; padding-bottom: 8px;">
             <span style="color: var(--text-secondary);">Portfolio Status:</span>
@@ -170,7 +170,7 @@ const AccountsManager = {
 
       // Investment gets Dividends, asset allocations, realignment bonds
       if (isInv) {
-        return t.type === 'Dividend' || t.purpose.includes('Allocation') || t.purpose.includes('Realignment');
+        return t.type === 'Dividend' || (t.purpose && (t.purpose.includes('Allocation') || t.purpose.includes('Realignment')));
       }
 
       return true;
@@ -219,7 +219,7 @@ const AccountsManager = {
         <div class="form-group">
           <label class="form-label">Source Asset Account</label>
           <select id="intSource" class="form-control" onchange="AccountsManager.updateIntModalLimits()">
-            <option value="checking">Premium Checking</option>
+            <option value="checking">Premier Checking</option>
             <option value="savings">High-Yield Savings</option>
           </select>
         </div>
@@ -228,7 +228,7 @@ const AccountsManager = {
           <label class="form-label">Recipient Asset Account</label>
           <select id="intDest" class="form-control">
             <option value="savings">High-Yield Savings</option>
-            <option value="checking">Premium Checking</option>
+            <option value="checking">Premier Checking</option>
           </select>
         </div>
 
@@ -310,19 +310,19 @@ const AccountsManager = {
 
     // Log transaction
     const ref = 'TXN-INT-' + Math.floor(100000 + Math.random() * 900000);
-    const sourceName = source === 'checking' ? 'Premium Checking' : 'High-Yield Savings';
-    const destName = dest === 'checking' ? 'Premium Checking' : 'High-Yield Savings';
+    const sourceName = source === 'checking' ? 'Premier Checking' : 'High-Yield Savings';
+    const destName = dest === 'checking' ? 'Premier Checking' : 'High-Yield Savings';
 
     const txnData = {
       ref: ref,
       beneficiary: destName,
-      bank: 'BNP Paribas Sec Corp (Internal)',
+      bank: 'LincOne FCU (Internal)',
       accountNumber: dest === 'checking' ? store.accounts.checking.accountNumber : store.accounts.savings.accountNumber,
       routingNumber: store.accounts.checking.routingNumber,
       amount: amount,
       type: 'Transfer',
       method: 'Internal Transfer',
-      status: 'Completed',
+      status: 'Pending',
       date: new Date().toISOString().split('T')[0],
       time: new Date().toLocaleTimeString('en-US', { hour12: false }),
       purpose: `Savings Deposit`

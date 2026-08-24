@@ -1,8 +1,8 @@
-# Tunex Private Banking System
+# LincOne Federal Credit Union Banking System
 
 A fully functional, luxury-styled, frontend-only Online Banking Application built exclusively with **HTML5**, **CSS3**, and **Vanilla JavaScript (ES6+)**. 
 
-> ⚠️ **FICTIONAL DEMONSTRATION NOTICE**: This application is a fictional demo created for presentation and demonstration purposes only. It is not connected to any real banking institution or financial network.
+> ⚠️ **DEMONSTRATION NOTICE**: This application is a digital banking platform created for presentation and demonstration purposes.
 
 ---
 
@@ -11,8 +11,8 @@ A fully functional, luxury-styled, frontend-only Online Banking Application buil
 - **Premium Luxury Fintech Aesthetic**: Dark & light mode engines, glassmorphism backdrop filters, soft gradients, gold/emerald accents, 60 FPS CSS animations, crisp typography.
 - **LocalStorage Data Persistence**: Persistent state management for account balances, transaction history, customer profiles, card configurations, notification feeds, and theme preferences.
 - **Three-Stage Money Transfer System**:
-  - **Stage 1 (Beneficiary Verification)**: Live simulated terminal network verification sequence (`Connecting to banking network...`, `Verifying account...`).
-  - **Stage 2 (Details & Amount)**: Real-time remaining balance calculations (`$10,000,000.00 - Amount`), purpose selection, auto-generated transaction reference numbers.
+  - **Stage 1 (Beneficiary Verification)**: Live simulated terminal network verification sequence (`Connecting to LincOne FCU network...`, `Verifying account...`).
+  - **Stage 2 (Details & Amount)**: Real-time remaining balance calculations (`$806,395.79 - Amount`), purpose selection, auto-generated transaction reference numbers.
   - **Stage 3 (Review & Confirm)**: Complete summary card with masked account credentials, multi-step progress encryption bar, and success handler.
 - **Digital Receipt Generator & Printable Statements**:
   - Download single-file standalone HTML receipts.
@@ -28,7 +28,7 @@ A fully functional, luxury-styled, frontend-only Online Banking Application buil
 
 ```
 banking-system/
-├── index.html                   # Luxury Login & Auth Portal
+├── index.html                   # LincOne FCU Login & Auth Portal
 ├── dashboard.html               # Main Banking Application Hub (SPA-style routing)
 ├── css/
 │   ├── style.css                # Design Tokens, CSS Variables, Typography, Buttons, Inputs
@@ -46,7 +46,8 @@ banking-system/
 │   ├── transactions.js          # Transaction Ledger Filters, Search & CSV Exporter
 │   └── receipt.js               # Digital Receipts & Monthly Statement Builder
 ├── assets/
-│   ├── logo.svg                 # Tunex Private Banking SVG Logo
+│   ├── logo.png                 # LincOne Federal Credit Union Logo
+│   ├── favicon.png              # LincOne Favicon Icon
 │   └── avatar.svg               # High-res User Avatar
 └── README.md                    # System Documentation
 ```
@@ -57,13 +58,14 @@ banking-system/
 
 | Parameter | Value |
 | :--- | :--- |
-| **Customer Name** | David McKenzie |
-| **Customer ID** | `BNK-8492041` |
-| **Account Type** | Premium Checking |
-| **Available Checking Balance** | `$10,000,000.00` |
-| **High-Yield Savings Balance** | `$2,500,000.00` |
-| **Investment Portfolio** | `$4,850,000.00` (*BNP Paribas Securities Corp.*) |
-| **Preloaded Beneficiary** | David McKenzie (*BancFirst*, Account `********5625`, Routing `********3632`) |
+| **Member Name** | Monique Franco |
+| **Member ID** | `L1FCU-806395` |
+| **Account Type** | Premier Checking |
+| **Available Checking Balance** | `$806,395.79` |
+| **High-Yield Savings Balance** | `$150,000.00` |
+| **Investment Portfolio** | `$250,000.00` (*LincOne Share Certificates*) |
+| **Recurring Funding Source** | `UNHCR` ($8,000+ monthly disbursements March – August) |
+| **Preloaded Beneficiary** | Monique Franco (*LincOne FCU*, Account `********5625`, Routing `********3632`) |
 
 ---
 

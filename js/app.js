@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TUNEX - APP AUTHENTICATION & LOGIN LOGIC
+   LINCONE FEDERAL CREDIT UNION - APP AUTHENTICATION & LOGIN LOGIC
    ========================================================================== */
 
 const App = {
@@ -26,9 +26,9 @@ const App = {
     const email = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value;
 
-    // Defined valid credentials
-    const VALID_EMAIL = 'anita.ao.cib.bnpparibas@zohomail.com';
-    const VALID_PASSWORD = 'DavidMck@3000';
+    // Defined valid credentials for Monique Franco
+    const VALID_EMAIL = 'Monifranc23@gmail.com';
+    const VALID_PASSWORD = 'Monique@2026';
 
     if (!email) {
       UI.showToast('Please enter your email address', 'error');
@@ -48,8 +48,8 @@ const App = {
     `;
 
     setTimeout(() => {
-      // Validate credentials
-      if (email !== VALID_EMAIL || password !== VALID_PASSWORD) {
+      // Validate credentials (case insensitive email check for convenience)
+      if (email.toLowerCase() !== VALID_EMAIL.toLowerCase() || password !== VALID_PASSWORD) {
         btn.disabled = false;
         btn.innerHTML = `
           <span>Secure Sign In</span>
@@ -78,8 +78,8 @@ const App = {
       `
       <p style="margin-bottom: 12px;">Use the following credentials to access your account:</p>
       <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; margin-bottom: 16px; font-size: 0.88rem;">
-        <div style="margin-bottom: 8px;"><span style="color: var(--text-muted);">Email:</span> <strong style="color: var(--accent-blue);">anita.ao.cib.bnpparibas@zohomail.com</strong></div>
-        <div><span style="color: var(--text-muted);">Password:</span> <strong style="color: var(--accent-emerald);">DavidMck@3000</strong></div>
+        <div style="margin-bottom: 8px;"><span style="color: var(--text-muted);">Email:</span> <strong style="color: var(--accent-blue);">Monifranc23@gmail.com</strong></div>
+        <div><span style="color: var(--text-muted);">Password:</span> <strong style="color: var(--accent-emerald);">Monique@2026</strong></div>
       </div>
       <div style="text-align: right;">
         <button class="btn btn-primary btn-sm" onclick="UI.closeModal()">Got it</button>
