@@ -27,7 +27,7 @@ const App = {
     const password = document.getElementById('password').value;
 
     // Defined valid credentials for Monique Franco
-    const VALID_EMAIL = 'Monifranc23@gmail.com';
+    const VALID_EMAIL = 'Harrismiller315@gmail.com';
     const VALID_PASSWORD = 'Monique@2026';
 
     if (!email) {
