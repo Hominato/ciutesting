@@ -6,12 +6,12 @@ const STORAGE_KEY = 'lincone_fcu_banking_system_v6';
 
 const DEFAULT_STATE = {
   user: {
-    name: 'Monique Franco',
+    name: 'Tom Katie',
     id: 'L1FCU-806395',
     accountType: 'Premier Checking',
     memberSince: 'Jan 2021',
     status: 'Verified',
-    email: 'Monifranc23@gmail.com',
+    email: 'Harrismiller315@gmail.com',
     phone: '+1 (555) 892-3401',
     address: '742 Evergreen Terrace, New York, NY 10001'
   },
